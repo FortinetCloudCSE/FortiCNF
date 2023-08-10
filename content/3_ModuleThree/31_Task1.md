@@ -1,11 +1,10 @@
 ---
-title: "Task 1: Subscribe to FortiGate CNF in AWS Marketplace"
-chapter: true
+title: "Task 1"
 weight: 1
 ---
 
 
-# Task 1: Subscribe to FortiGate CNF in AWS Marketplace
+## Task 1: Subscribe to FortiGate CNF in AWS Marketplace
 
 - 1.  Log into your AWS account and navigate to the AWS Marketplace listing for [**FortiGate CNF**](https://aws.amazon.com/marketplace/pp/prodview-vtjjha5neo52i). In the upper right corner, click **View purchase options**. On the next page, click **Subscribe**.
 

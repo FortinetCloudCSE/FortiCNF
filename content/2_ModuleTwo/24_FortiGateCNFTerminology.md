@@ -1,11 +1,9 @@
 ---
 title: "FortiGate CNF Terminology"
-chapter: true
 weight: 4
 ---
 
 
-# FortiGate CNF Terminology
 
 Term | Description
 ---|---

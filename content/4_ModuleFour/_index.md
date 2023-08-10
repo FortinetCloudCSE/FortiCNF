@@ -1,6 +1,5 @@
 ---
 title: "Workshop Test Traffic"
-chapter: true
 weight: 4
 ---
 

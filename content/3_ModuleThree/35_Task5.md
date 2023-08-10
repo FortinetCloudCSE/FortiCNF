@@ -1,11 +1,10 @@
 ---
-title: "Task 5: Validate Resolution of Dynamic Address Objects"
-chapter: true
+title: "Task 5"
 weight: 5
 ---
 
 
-# Task 5: Validate Resolution of Dynamic Address Objects
+## Task 5: Validate Resolution of Dynamic Address Objects
 
 - 1.  At this point, we are using a few dynamic address objects in our policy set. To confirm what they have resolved to, **navigate to CNF Instances** page and **right click the instance** and **select View Policy Set Revision.**
 

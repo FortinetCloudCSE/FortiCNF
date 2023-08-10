@@ -1,11 +1,8 @@
 ---
 title: "Workshop Logistics"
-chapter: true
 weight: 1
 ---
 
-
-# Workshop Logistics
 
 ## Accessing an AWS environment
 

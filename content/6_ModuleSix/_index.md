@@ -1,6 +1,5 @@
 ---
 title: "Providing Feedback"
-chapter: true
 weight: 6
 ---
 
