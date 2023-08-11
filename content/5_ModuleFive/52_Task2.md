@@ -1,11 +1,10 @@
 ---
-title: "Task 2: FortiManager Integration"
-chapter: true
+title: "Task 2"
 weight: 2
 ---
 
 
-# Task 2: FortiManager Integration
+## Task 2: FortiManager Integration
 
 - 1.  In the AWS CloudFormation console, make sure you are in the **us-west-1 (N. California)** region, then **toggle the view nested button to off** > then select the stack name > and on the details pane select the outputs tab. You should see the output for **FortiManagerLoginURL**. Login to the FortiManager with the username **`admin`** and the password **`FORTInet123!`**.
 

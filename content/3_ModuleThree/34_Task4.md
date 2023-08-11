@@ -1,11 +1,10 @@
 ---
-title: "Task 4: Create a policy set and apply it to a FortiGate CNF Instance"
-chapter: true
+title: "Task 4"
 weight: 4
 ---
 
 
-# Task 4: Create a policy set and apply it to a FortiGate CNF Instance
+## Task 4: Create a policy set and apply it to a FortiGate CNF Instance
 
 - 1.  At this point, we are using the default **allow_all** policy set which allows all communication to be allowed without any restriction from a Layer 4 and Layer 7 perspective.
 

@@ -1,11 +1,10 @@
 ---
-title: "Task 1: Deploying CNF Instances and GWLBe endpoints"
-chapter: true
+title: "Task 1"
 weight: 1
 ---
 
 
-# Task 1: Deploying CNF Instances and GWLBe endpoints
+## Task 1: Deploying CNF Instances and GWLBe endpoints
 
 {{% notice note %}}
 For this section of the workshop we will be using the **us-west-1 (N. California) region.** There is a deployment of another Application VPC where FortiGate-CNF will inspect the ingress & egress traffic flows. Also there is a Management VPC where FortiAnalyzer, FortiManager, and a Nikto Scanner are deployed.

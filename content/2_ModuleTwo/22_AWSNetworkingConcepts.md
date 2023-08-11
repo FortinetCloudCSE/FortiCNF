@@ -1,11 +1,9 @@
 ---
 title: "AWS Networking Concepts"
-chapter: true
 weight: 2
 ---
 
 
-# AWS Networking Concepts
 
 Before diving into the reference architecture for this workshop, let's review core AWS networking concepts.
 

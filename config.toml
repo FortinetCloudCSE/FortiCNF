@@ -74,14 +74,17 @@ enableEmoji = true
 
 
 [params]
-  # Change default color scheme with a variant one. Eg. can be "auto", "red", "blue", "green" or an array like [ "blue", "green" ].
-  #themeVariant = "auto"
-  #themeVariant = "blue"
-  themeVariant = "Fortinet"
+ # Change default color scheme with a variant
+  # Fortinet specific variants are: "Workshop", "UseCase", "Demo", "Spotlight", "FortinetSilver", "FortinetTeal".  These change the top left logo background & add Text under the Logo
+  # For added variants, please contact fortinetcloudcse@fortinet.com
+  themeVariant = "Workshop"
 
-  #themeVariant = "mine"
-  #themeVariant = "relearn-dark"
+  #Optional, By Default, the logo banner will match the Text from themeVariant Above
+  # If you would like to change the primary logo banner text, uncommenet logoBannerText Parameter and set to desired text.
+  logoBannerText="FortiGate CNF"
 
+  # Optional: If you'd like additional logo sub text/descriptions, use logoBannerSubText Parameter.  leave empty string to omit: ""
+  logoBannerSubText="AWS Immersion Day"
 
   # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
   # Useful to give opportunity to people to create merge request for your doc.
@@ -105,7 +108,7 @@ enableEmoji = true
 
   # If set to false, a Home button will appear below the search bar on the menu.
   # It is redirecting to the landing page of the current language if specified. (Default is "/")
-  disableLandingPageButton = false
+  disableLandingPageButton = true
 
   # When using mulitlingual website, disable the switch language button.
   disableLanguageSwitchingButton = true

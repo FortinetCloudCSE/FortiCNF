@@ -1,11 +1,10 @@
 ---
-title: "Task 2: Onboard an AWS account to FortiGate CNF"
-chapter: true
+title: "Task 2:"
 weight: 2
 ---
 
 
-# Task 2: Onboard an AWS account to FortiGate CNF
+## Task 2: Onboard an AWS account to FortiGate CNF
 
 - 1.  In the FortiGate CNF Console, navigate to AWS Accounts, then click **New** to start the add account wizard.
 

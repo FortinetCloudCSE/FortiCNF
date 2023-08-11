@@ -1,11 +1,8 @@
 ---
 title: "Centralized Egress"
-chapter: true
 weight: 3
 ---
 
-
-# Centralized Egress
 
 For this traffic flow we will focus on the Shared Services, Workload, and Inspection VPCs. Centralized egress is commonly used when there is a strong desire to control egress traffic through a common set of NAT GWs in an egress or what we call an Inspection VPC. The benefit of this design is that you only need NAT GWs in the Inspection VPC (one per AZ) vs every VPC (one per AZ), which have an hourly cost. The caveat of this design is traffic will traverse additional AWS networking components for inspection (ie TGW, etc) that will have additional cost.
 

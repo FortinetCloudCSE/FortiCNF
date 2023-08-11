@@ -1,11 +1,10 @@
 ---
-title: "Task 3: Deploying CNF Instances and GWLBe endpoints"
-chapter: true
+title: "Task 3"
 weight: 3
 ---
 
 
-# Task 3: Deploying CNF Instances and GWLBe endpoints
+## Task 3: Deploying CNF Instances and GWLBe endpoints
 
 - 1.  In the FortiGate CNF console, navigate to CNF instances and click **New**.
 

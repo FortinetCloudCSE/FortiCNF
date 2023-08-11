@@ -1,11 +1,8 @@
 ---
 title: "Centralized East West"
-chapter: true
 weight: 4
 ---
 
-
-# Centralized East West
 
 For this traffic flow we will focus on the Shared Services, Workload, and Inspection VPCs. Centralized East West is commonly used when there is need for multiple VPCs in the same region to access common private resources such as a shared services VPC, premise items, or workloads/services in other VPCs. The benefit of this design is that this a flexible but simple way to interconnect many resources in the same region. The caveat of this design is traffic will traverse additional AWS networking components for inspection (ie TGW, etc) that will have additional cost.
 

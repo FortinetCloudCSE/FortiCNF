@@ -1,11 +1,8 @@
 ---
 title: "AWS Common Architecture Patterns"
-chapter: true
 weight: 3
 ---
 
-
-# AWS Common Architecture Patterns
 
 While there are many ways to organize your infrastructure there are two main ways to design your networking when using GWLB, centralized and distributed. From the perspective of networking, routing, and GWLBe placement. We will discuss this further below.
 

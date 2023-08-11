@@ -1,11 +1,8 @@
 ---
 title: "Distributed Egress"
-chapter: true
 weight: 2
 ---
 
-
-# Distributed Egress
 
 For this traffic flow we will focus on the Application VPC. Distributed egress is commonly used when there is a need to inspect traffic for a VPC that has an attached IGW and resources with a public Elastic IP (EIP) or that are behind a NAT GW. The benefit of this design is that traffic does not need to traverse additional AWS networking components for inspection so each VPC is isolated from others. The caveat to consider is that each VPC would need a directly attached IGW and resources such as NAT GWs that have additional cost.
 
