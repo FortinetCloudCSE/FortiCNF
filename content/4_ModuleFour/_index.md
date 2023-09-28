@@ -13,4 +13,4 @@ We will look into these specific traffic flows:
   * **Centralized Egress**
   * **Centralized East West**
 
-![](./images/image-ref-diag1.png)
+![](image-ref-diag1.png)

@@ -6,7 +6,7 @@ weight: 4
 
 For this traffic flow we will focus on the Shared Services, Workload, and Inspection VPCs. Centralized East West is commonly used when there is need for multiple VPCs in the same region to access common private resources such as a shared services VPC, premise items, or workloads/services in other VPCs. The benefit of this design is that this a flexible but simple way to interconnect many resources in the same region. The caveat of this design is traffic will traverse additional AWS networking components for inspection (ie TGW, etc) that will have additional cost.
 
-![](../images/image-cent-eastwest-diag1.png)
+![](image-cent-eastwest-diag1.png)
 
 **Step 1:** An outbound connection starts with a private EC2 instance initiating a connection to a public resource. The first packet (ie TCP SYN) will be routed to the intrinsic router which will route traffic to the TGW attachment in the same AZ, as configured in the assigned VPC route table. The EC2 instance has a default route, received via DHCP, that points to the first host IP in the subnet which is the intrinsic router.
 
@@ -26,9 +26,9 @@ For this traffic flow we will focus on the Shared Services, Workload, and Inspec
 
 - 1.  To test out this flow navigate to the **AWS EC2 console and go to Instances > Instances**. Then select **WrkInstance2** and click Connect > EC2 serial console. Copy the instance ID as this will be the username and click connect.
 
-![](../images/image-t5-9.png)
+![](image-t5-9.png)
 
-![](../images/image-t5-10.png)
+![](image-t5-10.png)
 
 - 2.  Login to the instance with the instance ID as the username and **`FORTInet123!`** as the password. Then run the commands below to test traffic:
 
@@ -50,4 +50,4 @@ You are able to ping but SS annd HTTPS time out.
 For the ProdAPIBackend object, Tag.env=prod AND Tag.app-role=api AND Tag.app-tier=backend. For the ProdAuthBackend object, Tag.env=prod AND Tag.app-role=auth AND Tag.app-tier=backend.
 {{% /expand%}}
 
-![](../images/image-t5-11.png)
+![](image-t5-11.png)

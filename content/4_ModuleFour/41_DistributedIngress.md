@@ -6,7 +6,7 @@ weight: 1
 
 For this traffic flow we will focus on the Application VPC. Distributed ingress is commonly used when there is a need to inspect traffic for a VPC that is directly accessible with an attached IGW and resources with a public Elastic IP (EIP) or behind a public load balancer (ie ALB, NLB, etc). The benefit of this design is that traffic does not need to traverse additional AWS networking components for inspection so each VPC is isolated from others. The caveat to consider is that each VPC would need a directly attached IGW and resources such as load balancers, NAT GWs, etc that have additional cost.
 
-![](../images/image-dist-ingress-diag1.png)
+![](image-dist-ingress-diag1.png)
 
 **Step 1:** An inbound connection starts with an external user initiating a connection to a public resource such as a public NLB. The public NLB has a DNS record that resolves to a public IP for one of the NLB's Elastic Network Interface (ENI) in either public subnet. The first packet (ie TCP SYN) will then be seen at the IGW attached to the VPC where the public NLB is deployed. Since there is a Ingress route table assigned to the IGW, traffic destined to either public subnet will be sent to the GWLBe endpoint in the same AZ.
 
@@ -34,6 +34,6 @@ The NLB will perform destination NAT to change the private IP to that of the hea
 You are now only allowing HTTPS inbound to your environment that is sourced from a public IP within the United States!
 {{% /notice %}}
 
-![](../images/image-t5-1.png)
+![](image-t5-1.png)
 
-![](../images/image-t5-2.png)
+![](image-t5-2.png)

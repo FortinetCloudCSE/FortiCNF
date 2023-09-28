@@ -5,4 +5,4 @@ weight: 3
 
 
 
-![](./images/image-getready.jpg)
+![](image-getready.jpg)

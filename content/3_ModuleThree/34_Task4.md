@@ -4,123 +4,75 @@ weight: 4
 ---
 
 
-## Task 4: Create a policy set and apply it to a FortiGate CNF Instance
+## Task 4: Validate Resolution of Dynamic Address Objects
 
-- 1.  At this point, we are using the default **allow_all** policy set which allows all communication to be allowed without any restriction from a Layer 4 and Layer 7 perspective.
+- 1.  At this point, we are using a few dynamic address objects in our policy set. To confirm what they have resolved to, **navigate to CNF Instances** page and **right click the instance** and **select View Policy Set Revision.**
 
-![](../images/image-t4-1.png)
+![](image-t4b-1.png)
 
-- 2.  To customize the actual L4 rules and L7 security profile groups applied, in the FortiGate CNF Console **navigate to Policy & Objects > Policy Sets** to create your own policy set. Simply **click Create New**, select **Policy Set**, and give your policy set a name.
+- 2.  On the pop up window, **select the Addresses tab** and **double click each of the dynamic address objects** to confirm they resolve the IP addresses listed below.
 
-![](../images/image-t4-2.png)
+![](image-t4b-2.png)
 
-- 3.  Before adding in L4 rules within the policy set, create a few simple address objects. **Navigate to Policy & Objects > Addresses**, click New, and Address. Then create each of the address objects below.
+![](image-t4b-3.png)
 
-Name | Type | IP/Netmask Value
+Name | IP Address | Instance
 ---|---|---
-ClassA | Subnet | 10.0.0.0/8
-ClassB | Subnet | 172.16.0.0/12
-ClassC | Subnet | 192.168.0.0/16
-GooglePublicDNS1 | Subnet | 8.8.8.8/32
-GooglePublicDNS2 | Subnet | 8.8.4.4/32
-AppPublicSubnet1 | Subnet | 10.1.1.0/24
-AppPublicSubnet2 | Subnet | 10.1.2.0/24
-
-![](../images/image-t4-3.png)
-
-![](../images/image-t4-4.png)
-
-- 4.  Next, create an Address Group to include all the RFC 1918 class objects. On the same page, **click New, and Address Group**. Then create each the address object below.
-
-Name | Members Value
----|---
-RFC-1918 | ClassA, ClassB, ClassC
-
-![](../images/image-t4-5.png)
-
-![](../images/image-t4-6.png)
-
-- 5.  In FortiGate CNF you can create different types of address objects to be more flexible and granular in your rules within your policy set. Create an FQDN based address object by **clicking New, and Address**. Select FQDN for Type, then create the address object below.
+ProdAPIBackend | 10.2.2.10 | WrkInstance2
+ProdAuthBackend | 10.1.2.10 | SSInstance1
+SDNGroup1 | 10.1.3.10 & 10.1.4.10 | AppInstance1 & AppInstance2
+SDNGroup2 | 10.2.1.10 & 10.2.2.10 | WrkInstance1 & WrkInstance2
 
 {{% notice tip %}}
-**Note:** This can be used for internal Application, Network, and even legacy Elastic Load Balancers (ie ALB, NLB, ELB) to dynamically resolve their private IPs.
+**Note:** The Dynamic Address Objects are resolved again every 60 seconds to maintain an up to date list of addresses.
 {{% /notice %}}
 
-Name | Type | FQDN Value
----|---|---
-ipinfo.io | FQDN | ipinfo.io
+- 3.  In the EC2 Console, **Navigate to Auto Scaling > Auto Scale Groups** then **select and edit the existing group.**
 
-![](../images/image-t4-7.png)
+![](image-t4b-4.png)
 
-- 6. Geography based address objects are available in FortiGate CNF. This allows controlling traffic based on public IPs assigned to countries around the globe. These objects can be used as a source or destination object within policies used in a policy set. Create a geo based address object by **clicking New, and Address**. Select Geography for Type, then create the address objects below.
+- 4.  Next, edit the group details and **set the Desired, Minimum, and Maximum capacity to 1**. A new EC2 instance will be launched within a minute or two.
 
-{{% notice tip %}}
-**Note:** The IP for the country or region is automatically determined from the Geography IP database which is provided by FortiGuard Servers on a recurring basis. For more granular control to applications (especially external), it is recommended to use URL or DNS filtering and even Application Control for L7 inspection.
-{{% /notice %}}
+![](image-t4b-5.png)
 
-Name | Type | Country/Region Value
----|---|---
-UnitedStates | Geography | United States
-Russia | Geography | Russian Federation
-
-![](../images/image-t4-8.png)
-
-- 7.  Dynamic metadata based address objects are available in FortiGate CNF. This allows controlling of traffic based on things such as VPC ID, Auto Scale Group, EKS Cluster or Pod, and even Tag Name + Value pairs for a given AWS account and region. Create a dynamic based address object by **clicking New, and Address**. Select Dynamic for Type, then create the address objects below.
-
-{{% notice tip %}}
-**Note:** This is using AWS API calls behind the scenes such as ec2:DescribeInstances, eks:ListClusters, eks:DescribeCluster, etc. For instances, these must be running to have their IP address(es) (public and or private IPs) returned.
-{{% /notice %}}
-
-**Note:** For each object, you will use the same values for these settings:
+- 5.  In the **CNF console navigate to Policy & Objects > Addresses** and **create a new dynamic address object** based on the Auto Scale Group name, reference the values below:
 
 Type | AWS Account ID | AWS Region
 ---|---|---
 Dynamic | Workshop-AWS-Account-ID | us-east-2
 
-Here is the list of dynamic objects to create:
-
 Name | SDN Address Type | Filter Value
 ---|---|---
-ProdAPIBackend | Private | Tag.env=prod AND Tag.app-role=api AND Tag.app-tier=backend
-ProdAuthBackend | Private | Tag.env=prod AND Tag.app-role=auth AND Tag.app-tier=backend
-SDNGroup1 | Private | Tag.sdn-group=group1
-SDNGroup2 | Private | Tag.sdn-group=group2
-SDNGroup3 | Private | Tag.sdn-group=group3
+SSAutoScaleGrp1 | Private | AutoScaleGroup-iday-SSAutoScaleGroup1-...
 
-![](../images/image-t4-9.png)
-
-![](../images/image-t4-10.png)
-
-- 8.  Now you will create a policy set to enforce L4 rules using the address objects you just created in the previous steps. **Navigate to Policy & Objects > Policy Sets** and click New, Policy Set. Give it a name and click Ok. You will be returned to the list of policy sets. **Select your policy set and click Edit**. 
-
-![](../images/image-t4-11.png)
-
-![](../images/image-t4-12.png)
-
-![](../images/image-t4-13.png)
-
-- 9. Now you can create the policies listed below to control all directions of traffic within the example environment. **Click New** and create the policies listed below:
-
-Name | Source | Destination | Service | Action | Log Allowed Traffic
----|---|---|---|---|---
-BlockList-Inbound | Russia | all | ALL | DENY | All Sessions
-BlockList-Outbound | all | Russia | ALL | DENY | All Sessions
-HTTPS-Inbound | UnitedStates | RFC-1918 | HTTPS | ACCEPT | All Sessions
-ICMP-EastWest | RFC-1918 | RFC-1918 | ALL_ICMP | ACCEPT | All Sessions
-AuthSharedServices-EastWest | ProdAPIBackend | ProdAuthBackend | HTTPS + RADIUS | ACCEPT | All Sessions
-ICMP-Egress | RFC-1918 | UnitedStates | ALL_ICMP | ACCEPT | All Sessions
-IPinfo-Egress | SDNGroup1 + SDNGroup2 + AppPublicSubnet1 + AppPublicSubnet2 | ipinfo.io | HTTPS | ACCEPT | All Sessions
-
-![](../images/image-t4-14.png)
-
-![](../images/image-t4-15.png)
-
-- 10. In order to use this policy set, it must be applied to the deployed FortiGate CNF Instance. Navigate to CNF instances and **select and edit** the CNF Instance then **click the Configure Policy Set** bread crumb. In the Apply Policy Set, select your policy set then **click Save then Finalize**.
-
-{{% notice warning %}}
-**Note:** If you skip this step, your CNF Instance would still be using the allow_all policy set which means it basically just a cool FireRouter. :stuck_out_tongue_winking_eye: 
+{{% notice info %}}
+**Note:** The unique identifier at the end of the Auto Scale Group will be different in your environment.
 {{% /notice %}}
 
-![](../images/image-t4-16.png)
+![](image-t4b-6.png)
+
+- 6.  For the address object to be resolved, it must be used in a policy set that is applied to a deployed CNF Instance. In the **CNF console navigate to Policy & Objects > Policy Sets**, then **edit** the existing policy set, and **add** the new address object to the **IPinfo-Egress** rule as an additional source.
+
+![](image-t4b-7.png)
+
+- 7.  **Navigate to CNF Instances** page and **right click** the entry and **select Sync Policy Set**, then within a **few seconds click Refresh.**
+
+![](image-t4b-8.png)
+
+- 8.  On the CNF Instances page and **right click** the instance and **select View Policy Set Revision** again, then **select the Addresses tab** and **double click the new dynamic address object** to see the resolved private IP.
+
+{{% notice info %}}
+**Note:** The resolved IP address value will be different in your environment.
+{{% /notice %}}
+
+![](image-t4b-9.png)
+
+- 9.  The CNF Instance will continue to check what running resources match the configured filter in the dynamic address objects and update the list of resolved IP(s). To see this in action, in the **EC2 Console, Navigate to Auto Scaling > Auto Scale Groups** then **select and edit the existing group** and set the **Desired, Minimum, and Maximum capacity to 3**.
+
+![](image-t4b-10.png)
+
+- 10.  Within 60 seconds the existing address object will be updated. **Navigate to CNF Instances** page and **right click** the instance and **select View Policy Set Revision** again, then **select the Addresses tab** and **double click the new dynamic address object** to see the latest resolved private IPs.
+
+![](image-t4b-11.png)
 
 - 11. This concludes this section.

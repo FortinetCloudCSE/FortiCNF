@@ -4,34 +4,48 @@ weight: 1
 ---
 
 
-## Task 1: Subscribe to FortiGate CNF in AWS Marketplace
+## Task 1: Subscribe to FortiGate CNF in AWS Marketplace & Onboard an AWS account
 
 - 1.  Log into your AWS account and navigate to the AWS Marketplace listing for [**FortiGate CNF**](https://aws.amazon.com/marketplace/pp/prodview-vtjjha5neo52i). In the upper right corner, click **View purchase options**. On the next page, click **Subscribe**.
 
-![](../images/image-t1-1.png)
+![](image-t1-1.png)
 
 - 2.  In the available offers list, **select the Public offer**.
 
-![](../images/image-t1-2.png)
+![](image-t1-2.png)
 
 - 3.  The page should update and show the GA pricing. Click **Subscribe**.
 
-![](../images/image-t1-3.png)
+![](image-t1-3.png)
 
-- 4. A green banner will be at the top of the screen. Click **Set up your account** and this will redirect you to associating this subscription to your FortiCloud account.
+- 4. A green banner will be at the top of the screen. Click **Set up your account** and this will open a new tab in the AWS Marketplace console.
 
-![](../images/image-t1-4.png)
+![](image-t1-4.png)
 
-- 5.  *If you do not already have a FortiCloud account*, the [**Register**](https://support.fortinet.com/cred/#/sign-up) button will navigate you to where you can create your own account quickly. **Otherwise move on to the next step and login to your existing FortiCloud Account**.
+- 5.  Select **Login or create vendor account** and this will open a pop up window to login to FortiCloud.  
 
-![](../images/image-t1-5.png)
+{{% notice info %}}
+**If you have an existing FortiCloud Account**, click **Login**. Otherwise, the register button will walk you through creating your own account quickly.
+{{% /notice %}}
 
-- 6.  You should see this page showing your information and that the subscription has been successfully applied to your FortiCloud account.
+![](image-t1-5a.png)
 
-![](../images/image-t1-6.png)
+![](image-t1-5b.png)
 
-- 7.  Click on your account tile and you will now be on the dashboard of FortiGate CNF.
+- 6.  Once completed, you will see that the FortiCloud account is now linked with the AWS account.  Click **Launch template** to open a new tab in the CloudFormation console.
 
-![](../images/image-t1-7.png)
+![](image-t1-6.png)
 
-- 8. This concludes this section.
+- 7.  On the CloudFormation console, **tick the Capabilities box** and then click **Create stack**. Once the template has been successfully created, move on to the next step.
+
+![](image-t1-7.png)
+
+![](image-t1-8.png)
+
+- 8.  **Login to [FortiGate CNF Console](https://fortigatecnf.com/admin-portal/authentication/login)**. Once logged in, **click on your account tile** and you will see the CNF dashboard.
+
+![](image-t1-9.png)
+
+![](image-t1-10.png)
+
+- 9.  This concludes this section.

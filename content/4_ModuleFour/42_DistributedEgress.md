@@ -6,7 +6,7 @@ weight: 2
 
 For this traffic flow we will focus on the Application VPC. Distributed egress is commonly used when there is a need to inspect traffic for a VPC that has an attached IGW and resources with a public Elastic IP (EIP) or that are behind a NAT GW. The benefit of this design is that traffic does not need to traverse additional AWS networking components for inspection so each VPC is isolated from others. The caveat to consider is that each VPC would need a directly attached IGW and resources such as NAT GWs that have additional cost.
 
-![](../images/image-dist-egress-diag1.png)
+![](image-dist-egress-diag1.png)
 
 **Step 1:** An outbound connection starts with a private EC2 instance initiating a connection to a public resource. The first packet (ie TCP SYN) will be routed to the intrinsic router which will route traffic to the NAT GW in the same AZ, as configured in the assigned VPC route table. The EC2 instance has a default route, received via DHCP, that points to the first host IP in the subnet which is the intrinsic router.
 
@@ -30,9 +30,9 @@ The IGW will source NAT the traffic to the public EIP assigned to the NAT GW ENI
 
 - 1.  To test out this flow navigate to the **AWS EC2 console and go to Instances > Instances**. Then select either **AppInstance** and click Connect > EC2 serial console. Copy the instance ID as this will be the username and click connect.
 
-![](../images/image-t5-3.png)
+![](image-t5-3.png)
 
-![](../images/image-t5-4.png)
+![](image-t5-4.png)
 
 - 2.  Login to the instance with the instance ID as the username and **`FORTInet123!`** as the password. Then run the commands below to test traffic:
 
@@ -46,4 +46,4 @@ The IGW will source NAT the traffic to the public EIP assigned to the NAT GW ENI
 You are now only allowing HTTPS outbound to one FQDN and ICMP to any public IP within the United States!
 {{% /notice %}}
 
-![](../images/image-t5-5.png)
+![](image-t5-5.png)
