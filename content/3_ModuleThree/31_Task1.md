@@ -38,11 +38,19 @@ weight: 1
 
 - 7.  On the CloudFormation console, **tick the Capabilities box** and then click **Create stack**. Once the template has been successfully created, move on to the next step.
 
+{{% notice info %}}
+**Please use the us-west-2 (Oregon) region for this template**.  If you are in a different region, simply click on the region in the upper right hand corner and select Oregon.
+{{% /notice %}}
+
 ![](image-t1-7.png)
 
 ![](image-t1-8.png)
 
 - 8.  **Login to [FortiGate CNF Console](https://fortigatecnf.com/admin-portal/authentication/login)**. Once logged in, **click on your account tile** and you will see the CNF dashboard.
+
+{{% notice info %}}
+If you see **No Subscription Found**, please logout, wait 10-15 minutes, and try again.  You should see **Successful Subscription** once the backend registration is completed.
+{{% /notice %}}
 
 ![](image-t1-9.png)
 

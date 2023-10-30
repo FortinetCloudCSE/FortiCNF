@@ -1,0 +1,35 @@
+<script>
+  function formSubmit() {
+
+    var useremail = document.getElementById("useremail").value;
+    var postdata = "useremail=" + useremail;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open(
+      "POST",
+      "https://pkhivaiajm7oqyj3dou4qvrlg40nusqv.lambda-url.us-east-1.on.aws/",
+      false
+    );
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var json = eval("(" + this.responseText +")");
+        alert("Success. Result:" + json);
+	  }
+    };
+    xhr.onload = function () {
+      console.log(this.responseText);
+    };
+
+    xhr.send(postdata);
+
+    document.getElementById("useremail").setAttribute("value","Provisioning Started.");
+    return false;
+  }
+</script>
+
+<form id="provision-lab" onsubmit="return formSubmit();">
+  <label for="useremail">Please enter your email address to request an account</label>
+  <input type="email" id="useremail" name="useremail" value="" />
+  <input type="submit" value="Submit" />
+</form>
