@@ -30,3 +30,7 @@ An **Internet Gateway (IGW)** is a horizontally scaled, redundant, and highly av
 ![](image-gwlb.png)
 
 In this workshop we will use all these components to test FortiGate CNF in an enterprise design. 
+
+For a deep dive on AWS networking concepts in your own lab, outside of this event, you can follow the [**AWS Network Immersion Day workshop**](https://catalog.workshops.aws/networking/en-US) in your own AWS account at your leisure.
+
+This concludes this section.

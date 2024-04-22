@@ -6,7 +6,7 @@ weight: 1
 
 ## Task 1: Subscribe to FortiGate CNF in AWS Marketplace & Onboard an AWS account
 
-- 1.  Log into your AWS account and navigate to the AWS Marketplace listing for [**FortiGate CNF**](https://aws.amazon.com/marketplace/pp/prodview-vtjjha5neo52i). In the upper right corner, click **View purchase options**. On the next page, click **Subscribe**.
+- 1.  Log into your AWS account and navigate to the AWS Marketplace listing for [**FortiGate CNF (click for MP listing)**](https://aws.amazon.com/marketplace/pp/prodview-vtjjha5neo52i). In the upper right corner, click **View purchase options**. On the next page, click **Subscribe**.
 
 ![](image-t1-1.png)
 
@@ -32,21 +32,19 @@ weight: 1
 
 ![](image-t1-5b.png)
 
-- 6.  Once completed, you will see that the FortiCloud account is now linked with the AWS account.  Click **Launch template** to open a new tab in the CloudFormation console.
-
-![](image-t1-6.png)
-
-- 7.  On the CloudFormation console, **tick the Capabilities box** and then click **Create stack**. Once the template has been successfully created, move on to the next step.
+- 6.  Once completed, you will see that the FortiCloud account is now linked with the AWS account.  Click **Launch template** to open a new tab in the CloudFormation console.  On the CloudFormation console, **tick the Capabilities box** and then click **Create stack**. Once the template has been successfully created, move on to the next step.
 
 {{% notice info %}}
 **Please use the us-west-2 (Oregon) region for this template**.  If you are in a different region, simply click on the region in the upper right hand corner and select Oregon.
 {{% /notice %}}
 
+![](image-t1-6.png)
+
 ![](image-t1-7.png)
 
 ![](image-t1-8.png)
 
-- 8.  **Login to [FortiGate CNF Console](https://fortigatecnf.com/admin-portal/authentication/login)**. Once logged in, **click on your account tile** and you will see the CNF dashboard.
+- 7.  **Login to [FortiGate CNF Console](https://fortigatecnf.com/admin-portal/authentication/login)**. Once logged in, **click on your account tile** and you will see the CNF dashboard.
 
 {{% notice info %}}
 If you see **No Subscription Found**, please logout, wait 10-15 minutes, and try again.  You should see **Successful Subscription** once the backend registration is completed.
@@ -56,4 +54,4 @@ If you see **No Subscription Found**, please logout, wait 10-15 minutes, and try
 
 ![](image-t1-10.png)
 
-- 9.  This concludes this section.
+- 8.  This concludes this section.

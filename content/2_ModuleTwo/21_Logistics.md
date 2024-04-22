@@ -50,3 +50,5 @@ When the results pop up, **right click** the name of the service and open the de
 ![](image-awsconsole1.png)
 
 ![](image-awsconsole2.png)
+
+This concludes this section.

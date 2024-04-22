@@ -5,7 +5,7 @@ weight: 1
 
 # Secure AWS workloads with FortiGate CNF SaaS
 
-![](image-cnf-overview.png)
+![](./image-cnf-overview.png)
 
 ## Learning Objectives
 
@@ -43,4 +43,4 @@ This is the architecture and environment that will be used in the workshop.
   * **Distributed Ingress + Egress**
   * **Centralized Egress + East-West**
 
-![](image-ref-diag1.png)
+![](./image-ref-diag1.png)

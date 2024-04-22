@@ -6,7 +6,7 @@ weight: 3
 
 While there are many ways to organize your infrastructure there are two main ways to design your networking when using GWLB, centralized and distributed. From the perspective of networking, routing, and GWLBe placement. We will discuss this further below.
 
-FortiGate CNF is a SaaS offering that on the backend uses FortiGates, AWS GWLB, and GWLB endpoints to intercept customer traffic and inspect this transparently. As part of the deployment process for FortiGate CNF instances, the customer environment will need to implement [VPC routing](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html) and [Ingress Routing](https://aws.amazon.com/blogs/aws/new-vpc-ingress-routing-simplifying-integration-of-third-party-appliances/) at the IGW to intercept the traffic to be inspected.
+FortiGate CNF is a SaaS offering that on the backend uses FortiGates, AWS GWLB, and GWLB endpoints to intercept customer traffic and inspect this transparently. As part of the deployment process for FortiGate CNF instances, the customer environment will need to implement [**VPC routing**](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html) and [**Ingress Routing**](https://aws.amazon.com/blogs/aws/new-vpc-ingress-routing-simplifying-integration-of-third-party-appliances/) at the IGW to intercept the traffic to be inspected.
 
 The FortiGate CNF security stack which includes the AWS GWLB and other components will be deployed in Fortinet managed AWS accounts. The details of the diagram are simply an example of the main components used in FortiGate CNF. This is more to understand what happens when customer traffic is received at our GWLB.
 
@@ -37,3 +37,5 @@ The **yellow numbers** show the initial packet flow for a session and how it is 
 ![](image-cap-8.png)
 
 For more examples of distributed and centralized models, please reference the examples in the [**FortiGate CNF Admin Guide**](https://docs.fortinet.com/document/fortigate-cnf/latest/administration-guide/325439/deployment-scenarios).
+
+This concludes this section.

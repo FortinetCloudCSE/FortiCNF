@@ -15,3 +15,5 @@ Security Profile Group | A group of Layer 7 inspection profiles such as Intrisio
 ![](image-cnf-concepts.png)
 
 ![](image-cnf-detailed-view.png)
+
+This concludes this section.
