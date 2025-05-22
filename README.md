@@ -1,3 +1,1 @@
-# FortiGate CNF Workshop
-
-[Access the workshop.](https://fortinetcloudcse.github.io/FortiCNF/).
+<h1>FortiCNF</h1><h3>To view the workshop, please go here: <a href="https://fortinetcloudcse.github.io/FortiCNF/">FortiCNF</a></h3><hr><h3>For more information on creating these workshops, please go here: <a href="https://fortinetcloudcse.github.io/UserRepo/">FortinetCloudCSE User Repo</a></h3>
