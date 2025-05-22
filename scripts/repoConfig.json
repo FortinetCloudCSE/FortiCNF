@@ -1,0 +1,37 @@
+{
+    "repoName": "FortiCNF",
+    "author": "Hiruy Aberra",
+    "workshopTitle": "FortiGate CNF Workshop",
+    "themeVariant": "Workshop",
+    "logoBannerText": "FortiGate CNF",
+    "logoBannerSubText": "AWS Immersion Day",
+    "errorLevel": "warning",
+    "googleServicesID": "G-5RZBH288ST",
+    "marketingCode": "FortiHugo202",
+    "shortcuts": [
+        {
+            "text": "Fortinet's AWS Microsite",
+            "URL": "https://fortinet.com/aws",
+            "icon": "fa-tools",
+            "weight": 10
+        },
+        {
+            "text": "AWS MP Listings for Fortinet",
+            "URL": "https://aws.amazon.com/marketplace/search/results?searchTerms=fortinet",
+            "icon": "fa-tools",
+            "weight": 11
+        },
+        {
+            "text": "Fortinet in AWS Docs",
+            "URL": "https://docs.fortinet.com/cloud-solutions/aws",
+            "icon": "fa-tools",
+            "weight": 12
+        },
+        {
+            "text": "FortiGate CNF Docs",
+            "URL": "https://docs.fortinet.com/product/fortigate-cnf",
+            "icon": "fa-tools",
+            "weight": 13
+        }
+    ]
+}
